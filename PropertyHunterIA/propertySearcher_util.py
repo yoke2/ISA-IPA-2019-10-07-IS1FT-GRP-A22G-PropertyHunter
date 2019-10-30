@@ -134,9 +134,21 @@ def classify_image(data, prefer1, prefer2, prefer3):
         if i != '':
             print(f'======== start clustering {i} ==========')
             # get cluster
-            view1 = predict_image_cluster(imagepath / f'{i} view1.png')
-            view2 = predict_image_cluster(imagepath / f'{i} view2.png')
-            view3 = predict_image_cluster(imagepath / f'{i} view3.png')
+            try:
+                view1 = predict_image_cluster(imagepath / f'{i} view1.png')
+            except:
+                view1 = 'N'
+                print('no image1 found')
+            try:
+                view2 = predict_image_cluster(imagepath / f'{i} view2.png')
+            except:
+                view2 = 'N'
+                print('no image2 found')
+            try:
+              view3 = predict_image_cluster(imagepath / f'{i} view3.png')
+            except:
+                view3= 'N'
+                print('no image3 found')
 
             # add cluster in dict
             shortlist_cluster[i] = f'{view1}|{view2}|{view3}'
@@ -456,7 +468,10 @@ def classify_text(data, num_clusters, features_per):
                                        use_idf=True,
                                       max_df=0.8,min_df=0.2,ngram_range=(1,1))
 
-    tfidf_matrix = tfidf_vectorizer.fit_transform(y)#fit the vectorizer to synopses
+    try:
+        tfidf_matrix = tfidf_vectorizer.fit_transform(y)#fit the vectorizer to synopses
+    except:
+        return [''] * len(x)
     terms = tfidf_vectorizer.get_feature_names()
 
     """# k-means classification"""
