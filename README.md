@@ -33,4 +33,4 @@ You can download the video under the Report Folder.
 
 Please download the project report from the link below. The user guide is in Annex A.  
 
-Final Report Download Link : <https://github.com/yoke2/ISA-IPA-2019-10-07-IS1FT-GRP-A22G-PropertyHunter/blob/master/Report/CA1_Report_-_Property_Hunter_Intelligent_System_V1.1.pdf>
+Final Report Download Link : <https://github.com/yoke2/ISA-IPA-2019-10-07-IS1FT-GRP-A22G-PropertyHunter/blob/master/Report/CA1%20Report%20-%20Property%20Hunter%20Intelligent%20System%20V1.1.pdf>
